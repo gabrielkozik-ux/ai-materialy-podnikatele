@@ -103,11 +103,19 @@
             margin: -20px auto 40px;
             color: var(--text-color);
         }
+        .subsection-title {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-top: 50px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary-color);
+            font-weight: 700;
+        }
         .materials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
         .material-item {
             background: var(--white);
@@ -118,10 +126,10 @@
             display: flex;
             flex-direction: column;
         }
-        .material-item h3 { margin-top: 0; color: var(--primary-color); }
+        .material-item h3 { margin-top: 0; color: var(--primary-color); font-size: 1.25em;}
         .material-item p { font-size: 1.05em; color: var(--text-color); flex-grow: 1; }
         .material-item-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .material-item-header svg { width: 40px; height: 40px; color: var(--secondary-color); }
+        .material-item-header svg { width: 40px; height: 40px; color: var(--secondary-color); flex-shrink: 0; }
         .cta-button-small {
             display: inline-block;
             background-color: var(--accent-color);
@@ -147,7 +155,7 @@
         .social-icon{color:var(--white);text-decoration:none;transition:color .3s ease,transform .2s ease;display:inline-block}
         .social-icon img{width:30px;height:30px;border-radius:4px;}
         .social-icon:hover{color:var(--secondary-color);transform:translateY(-3px)}
-        @media (max-width:768px){.footer-grid{text-align:center}.social-icons-container{justify-content:center}}
+        @media (max-width:768px){.hero h1 {font-size: 2.5em;}.footer-grid{text-align:center}.social-icons-container{justify-content:center}}
 
     </style>
 </head>
@@ -179,8 +187,8 @@
                 <h2 class="section-title">Materiály ke stažení</h2>
                 <p class="section-subtitle">Kliknutím na tlačítko si můžete soubor zobrazit nebo stáhnout do svého počítače.</p>
                 
+                <h3 class="subsection-title">Základní</h3>
                 <div class="materials-grid">
-
                     <div class="material-item">
                         <div class="material-item-header">
                             <svg><use xlink:href="#icon-document"></use></svg>
@@ -195,7 +203,7 @@
                             <svg><use xlink:href="#icon-document"></use></svg>
                             <h3>Prezentace ze semináře</h3>
                         </div>
-                        <p>Pprezentace ve formátu .pdf vás provede klíčovými aspekty Aktu o AI, pyramidou rizik a praktickými dopady na české firmy.</p>
+                        <p>Prezentace ve formátu .pdf vás provede klíčovými aspekty Aktu o AI, pyramidou rizik a praktickými dopady na české firmy.</p>
                         <a href="./Regulace-AI-podnikani.pdf" class="cta-button-small" download>Stáhnout PDF</a>
                     </div>
                     
@@ -207,7 +215,19 @@
                         <p>Analýza právního rámce, klíčových povinností a dopadů Aktu o AI v kontextu České republiky.</p>
                         <a href="./Shrnuti-regulace.pdf" class="cta-button-small" download>Stáhnout PDF</a>
                     </div>
-                    
+
+                    <div class="material-item">
+                        <div class="material-item-header">
+                            <svg><use xlink:href="#icon-document"></use></svg>
+                            <h3>Klíčové povinnosti deployerů (SME)</h3>
+                        </div>
+                        <p>Praktický přehled klíčových povinností pro malé a střední podniky, které nasazují (deployují) AI systémy.</p>
+                        <a href="./Klicove-povinnosti-deployer-SME.pdf" class="cta-button-small" download>Stáhnout PDF</a>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Doprovodné</h3>
+                <div class="materials-grid">
                     <div class="material-item">
                         <div class="material-item-header">
                             <svg><use xlink:href="#icon-video"></use></svg>
@@ -259,7 +279,7 @@
                             <h3>Použití GPAI pro rizikový účel</h3>
                         </div>
                         <p>Analýza odpovědnosti při nasazení obecného modelu AI (GPAI) pro specifický, vysoce rizikový účel dle AI Actu.</p>
-                        <a href="Pouziti-GPAI-rizikove.pdf" class="cta-button-small" download>Stáhnout PDF</a>
+                        <a href="./Pouziti-GPAI-rizikove.pdf" class="cta-button-small" download>Stáhnout PDF</a>
                     </div>
 
                 </div>
