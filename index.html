@@ -51,7 +51,7 @@
         }
         .landing-nav-contact:hover { color: var(--secondary-color); }
         .hero {
-            background-image: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), url(https://images.unsplash.com/photo-1516132006923-6cf348e5c288?q=80&w=2070&auto=format&fit=crop);
+            background-image: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), url(uvodni-obrazek.jpg);
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -135,13 +135,20 @@
             text-align: center;
         }
         .cta-button-small:hover { background-color: #005a8c; }
-        footer {
-            background-color: var(--primary-color);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .copyright { margin-top: 20px; font-size: 0.9em; color: rgba(255, 255, 255, 0.6); }
+        
+        /* Footer Styles from gabrielkozik.html */
+        footer{background-color:var(--primary-color);color:var(--white);padding:40px 20px; color: rgba(255, 255, 255, 0.8);}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;max-width:1100px;margin:0 auto; text-align: left;}
+        .footer-grid h4{color:var(--secondary-color);margin-bottom:10px}
+        .footer-grid a,.footer-grid p{margin:0;color:var(--white);text-decoration:none;font-size:.9em}
+        .footer-grid a:hover{text-decoration:underline}
+        .copyright{text-align:center;margin-top:40px;font-size:.8em;color:rgba(255,255,255,.7)}
+        .social-icons-container{display:flex;justify-content:flex-start;gap:15px;margin-top:15px}
+        .social-icon{color:var(--white);text-decoration:none;transition:color .3s ease,transform .2s ease;display:inline-block}
+        .social-icon img{width:30px;height:30px;border-radius:4px;}
+        .social-icon:hover{color:var(--secondary-color);transform:translateY(-3px)}
+        @media (max-width:768px){.footer-grid{text-align:center}.social-icons-container{justify-content:center}}
+
     </style>
 </head>
 <body>
@@ -236,19 +243,37 @@
                         <a href="./Prehled-spory-autori.pdf" class="cta-button-small" download>Stáhnout PDF</a>
                     </div>
 
+                    <div class="material-item">
+                        <div class="material-item-header">
+                            <svg><use xlink:href="#icon-pdf"></use></svg>
+                            <h3>Použití GPAI pro rizikový účel</h3>
+                        </div>
+                        <p>Analýza odpovědnosti při nasazení obecného modelu AI (GPAI) pro specifický, vysoce rizikový účel dle AI Actu.</p>
+                        <a href="Pouziti-GPAI-rizikove.pdf" class="cta-button-small" download>Stáhnout PDF</a>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
     
-     <footer>
-        <div class="container">
-            <p><strong>Mgr. Gabriel Kožík</strong></p>
-            <p>E-mail: kozik@iustoria.cz tel.: 720 265 713</p>
-            <div class="copyright">
-                <p>&copy; 2025 ai-podnikani.cz. Všechna práva vyhrazena.</p>
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>Mgr. Gabriel Kožík</h4>
+                <p>Advokát & AI Stratég</p>
+                <div class="social-icons-container">
+                    <a href="https://www.linkedin.com/in/gabriel-kozik/" target="_blank" class="social-icon" aria-label="LinkedIn profil"><img src="linkedin.png" alt="LinkedIn ikona"></a>
+                    <a href="https://www.facebook.com/somslovak" target="_blank" class="social-icon" aria-label="Facebook profil"><img src="facebook.png" alt="Facebook ikona"></a>
+                    <a href="https://www.instagram.com/kozik_gabriel/" target="_blank" class="social-icon" aria-label="Instagram profil"><img src="instagram.png" alt="Instagram ikona"></a>
+                    <a href="https://www.youtube.com/@gabriel-kozik" target="_blank" class="social-icon" aria-label="YouTube kanál"><img src="youtube.png" alt="YouTube ikona"></a>
+                </div>
             </div>
+            <div><h4>Kontakt</h4><p>E-mail: <a href="mailto:kozik@iustoria.cz">kozik@iustoria.cz</a></p><p>Telefon: <a href="tel:+420720265713">+420 720 265 713</a></p><p>Datová schránka: eygwp2c</p></div>
+            <div><h4>Kancelář</h4><p>IUSTORIA, advokátní kancelář, s.r.o.</p><p>Slovákova 279/11, 602 00 Brno</p><p><a href="http://www.iustoria.cz" target="_blank">www.iustoria.cz</a></p></div>
+            <div><h4>Zápis v ČAK</h4><p>ev. č.: 19320</p><p>IČO (fyzická osoba): 05187559</p><p>společník s.r.o.</p></div>
         </div>
+        <div class="copyright"><p>&copy; 2025 Mgr. Gabriel Kožík. Všechna práva vyhrazena.</p></div>
     </footer>
     
 </body>
