@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiály ze semináře | Právní regulace AI v ČR</title>
+    <meta name="description" content="Exkluzivní materiály a zdroje ze semináře 'Právní regulace umělé inteligence v ČR', které vám pomohou implementovat AI bezpečně a v souladu s legislativou.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+        :root {
+            --primary-color: #0a2342;
+            --secondary-color: #2ca58d;
+            --accent-color: #0077b6;
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .landing-nav {
+            background-color: var(--white);
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .landing-nav-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.3em;
+        }
+        .landing-nav-contact {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .landing-nav-contact:hover { color: var(--secondary-color); }
+        .hero {
+            background-image: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), url(https://images.unsplash.com/photo-1516132006923-6cf348e5c288?q=80&w=2070&auto=format&fit=crop);
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .hero p {
+            font-size: 1.3em;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: #238c76;
+            transform: translateY(-3px);
+        }
+        section { padding: 60px 20px; }
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 300;
+            max-width: 800px;
+            margin: -20px auto 40px;
+            color: var(--text-color);
+        }
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .material-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            border-top: 4px solid var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+        }
+        .material-item h3 { margin-top: 0; color: var(--primary-color); }
+        .material-item p { font-size: 1.05em; color: var(--text-color); flex-grow: 1; }
+        .material-item-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .material-item-header svg { width: 40px; height: 40px; color: var(--secondary-color); }
+        .cta-button-small {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 700;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .cta-button-small:hover { background-color: #005a8c; }
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .copyright { margin-top: 20px; font-size: 0.9em; color: rgba(255, 255, 255, 0.6); }
+    </style>
+</head>
+<body>
+    <svg width="0" height="0" style="position:absolute; display:none;">
+        <symbol id="icon-pdf" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 11H7v2h2v2H7v-2H5v-2h2V9h2v2zm4 6h-2v-4h2v4zm4-6h-2V9h2v2z"/></symbol>
+        <symbol id="icon-video" viewBox="0 0 24 24"><path fill="currentColor" d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></symbol>
+        <symbol id="icon-document" viewBox="0 0 24 24"><path fill="currentColor" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/></symbol>
+        <symbol id="icon-audio" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3c-4.97 0-9 4.03-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7c0-4.97-4.03-9-9-9z"/></symbol>
+    </svg>
+
+    <nav class="landing-nav">
+        <a href="#" class="landing-nav-title">ai-podnikani.cz</a>
+        <a href="mailto:kozik@iustoria.cz" class="landing-nav-contact">Kontakt</a>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Materiály ze semináře</h1>
+            <p>Vítejte! Na této stránce najdete všechny prezentace, dokumenty, videa a další bonusové materiály ze semináře "Právní regulace umělé inteligence v ČR".</p>
+            <a href="#materialy" class="cta-button">Zobrazit materiály</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="materialy">
+            <div class="container">
+                <h2 class="section-title">Materiály ke stažení</h2>
+                <p class="section-subtitle">Kliknutím na tlačítko si můžete soubor zobrazit nebo stáhnout do svého počítače.</p>
+                
+                <div class="materials-grid">
+
+                    <div class="material-item">
+                        <div class="material-item-header">
+                            <svg><use xlink:href="#icon-pdf"></use></svg>
+                            <h3>Prezentace ze semináře</h3>
+                        </div>
+                        <p>Hlavní prezentace (PDF), která vás provedla klíčovými aspekty Aktu o AI, pyramidou rizik a praktickými dopady na české firmy.</p>
+                        <a href="./Regulace AI v podnikání_fin.pdf" class="cta-button-small" download>Stáhnout PDF</a>
+                    </div>
+                    
+                    <div class="material-item">
+                        <div class="material-item-header">
+                            <svg><use xlink:href="#icon-document"></use></svg>
+                            <h3>Souhrnný briefing regulace</h3>
+                        </div>
+                        <p>Podrobná analýza právního rámce, klíčových povinností a dopadů Aktu o AI v kontextu České republiky. Ideální pro hlubší studium.</p>
+                        <a href="./Shrnuti-regulace.docx" class="cta-button-small" download>Stáhnout DOCX</a>
+                    </div>
+                    
+                    <div class="material-item">
+                        <div class="material-item-header">
+                            <svg><use xlink:href="#icon-video"></use></svg>
+                            <h3>Video: Průvodce Aktem o AI</h3>
+                        </div>
+                        <p>Krátké shrnující video, které vizuálně představuje základní pilíře nového nařízení EU o umělé inteligenci a časovou osu jeho zavádění.</p>
+                        <a href="./Akt-o-AI-video.mp4" class="cta-button-small" download>Stáhnout MP4</a>
+                    </div>
+                    
+                    <div class="material-item">
+                        <div class="material-item-header">
+                            <svg><use xlink:href="#icon-audio"></use></svg>
+                            <h3>Podcast: Regulace v praxi</h3>
+                        </div>
+                        <p>Audio záznam diskuze na téma praktických dopadů regulace AI na advokátní kanceláře a firmy. Poslechněte si v autě nebo na cestách.</p>
+                        <a href="./Akt-o-AI-podcast.m4a" class="cta-button-small" download>Stáhnout M4A</a>
+                    </div>
+                    
+                    <div class="material-item">
+                        <div class="material-item-header">
+                            <svg><use xlink:href="#icon-document"></use></svg>
+                            <h3>Článek: 5 právních rizik AI</h3>
+                        </div>
+                        <p>Praktický článek shrnující pět nejčastějších právních rizik spojených s používáním generativní AI v českém prostředí, včetně reálných příkladů.</p>
+                        <a href="./5-pravnich-rizik.docx" class="cta-button-small" download>Stáhnout DOCX</a>
+                    </div>
+                    
+                    <div class="material-item">
+                        <div class="material-item-header">
+                            <svg><use xlink:href="#icon-document"></use></svg>
+                            <h3>Analýza: Ochrana autorství</h3>
+                        </div>
+                        <p>Detailní pohled na problematiku autorského práva. Jak prakticky uplatnit "opt-out" a jak se bránit neoprávněnému trénování na vašich datech.</p>
+                         <a href="./Ochrana-autorstvi.docx" class="cta-button-small" download>Stáhnout DOCX</a>
+                    </div>
+
+                    <div class="material-item">
+                        <div class="material-item-header">
+                            <svg><use xlink:href="#icon-document"></use></svg>
+                            <h3>Přehled: Autorské spory</h3>
+                        </div>
+                        <p>Exkluzivní přehled nejvýznamnějších soudních sporů mezi tvůrci obsahu (média, autoři, umělci) a vývojáři velkých AI modelů.</p>
+                        <a href="./Prehled-spory-autori.docx" class="cta-button-small" download>Stáhnout DOCX</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    
+     <footer>
+        <div class="container">
+            <p><strong>Mgr. Gabriel Kožík</strong></p>
+            <p>E-mail: kozik@iustoria.cz</p>
+            <div class="copyright">
+                <p>&copy; 2025 ai-podnikani.cz. Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
