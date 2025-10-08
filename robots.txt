@@ -1,0 +1,19 @@
+# Zákaz pro robota OpenAI (ChatGPT)
+User-agent: GPTBot
+Disallow: /
+
+# Zákaz pro robota Google (Gemini, Vertex AI)
+User-agent: Google-Extended
+Disallow: /
+
+# Zákaz pro Common Crawl (využíván mnoha třetími stranami)
+User-agent: CCBot
+Disallow: /
+
+# Zákaz pro robota Anthropic (Claude)
+User-agent: anthropic-ai
+Disallow: /
+
+# Zákaz pro Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
