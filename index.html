@@ -142,6 +142,7 @@
             transition: background-color 0.3s ease;
             margin-top: 15px;
             text-align: center;
+            cursor: pointer;
         }
         .cta-button-small:hover { background-color: #005a8c; }
         
@@ -155,6 +156,75 @@
         .social-icon{color:var(--white);text-decoration:none;transition:color .3s ease,transform .2s ease;display:inline-block}
         .social-icon img{width:30px;height:30px;border-radius:4px;}
         .social-icon:hover{color:var(--secondary-color);transform:translateY(-3px)}
+
+        /* --- STYLY PRO MODÁLNÍ OKNO --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .modal-close:hover {
+            color: var(--text-color);
+        }
+        .legal-text-content {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .legal-text-content h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+        }
+        .modal-actions {
+            text-align: right;
+            margin-top: 30px;
+        }
+        #accept-and-download-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: 700;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #accept-and-download-btn:hover {
+            background-color: #238c76;
+        }
+        /* --- KONEC STYLŮ PRO MODÁLNÍ OKNO --- */
+
         @media (max-width:768px){.hero h1 {font-size: 2.5em;}.footer-grid{text-align:center}.social-icons-container{justify-content:center}}
 
     </style>
@@ -358,9 +428,99 @@
         <div class="copyright"><p>&copy; 2025 Mgr. Gabriel Kožík. Všechna práva vyhrazena.</p></div>
     </footer>
     
+    <!-- MODÁLNÍ OKNO PRO PRÁVNÍ UJEDNÁNÍ -->
+    <div id="legal-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 class="section-title" style="margin-bottom: 10px;">Právní ujednání</h2>
+            <p class="section-subtitle" style="margin-top: 0; margin-bottom: 20px;">Před stažením materiálů si prosím přečtěte následující podmínky.</p>
+            <div class="legal-text-content">
+                <p>Přístupem k materiálům dostupným na této stránce a jejich stažením vyjadřuje uživatel svůj bezvýhradný souhlas s níže uvedenými podmínkami.</p>
+                
+                <h4>1. Vyloučení odpovědnosti a informační charakter obsahu</h4>
+                <p>Veškeré materiály (včetně dokumentů, prezentací, video a audio záznamů) jsou poskytovány výhradně pro informační a vzdělávací účely jako doplňkový zdroj k semináři "Právní regulace umělé inteligence v ČR".</p>
+                <p>Obsah v žádném případě nepředstavuje poskytování právních služeb ani právní poradenství ve smyslu zákona č. 85/1996 Sb., o advokacii. Informace zde uvedené nemohou nahradit kvalifikované právní, daňové či jiné odborné poradenství, které zohledňuje specifické okolnosti konkrétního případu.</p>
+                <p>Autor nenese žádnou odpovědnost za případnou újmu, ať už přímou či nepřímou, která by uživateli nebo třetím stranám vznikla v důsledku použití, interpretace nebo spolehnutí se na informace obsažené v těchto materiálech. Uživatel bere na vědomí, že jakékoli kroky učiněné na základě těchto informací činí na vlastní riziko a odpovědnost.</p>
+
+                <h4>2. Ochrana autorských práv a licenční podmínky</h4>
+                <p>Veškerý obsah dostupný na této stránce je autorským dílem ve smyslu zákona č. 121/2000 Sb., o právu autorském, o právech souvisejících s právem autorským a o změně některých zákonů (autorský zákon), v platném znění. Nositelem veškerých majetkových autorských práv je autor, Mgr. Gabriel Kožík, není-li výslovně uvedeno jinak.</p>
+                <p>Stažením materiálů získává uživatel nevýhradní, nepřevoditelnou a územně neomezenou licenci k jejich užití, a to <strong>výhradně pro svou osobní vzdělávací potřebu</strong>.</p>
+                <p>Uživatelům je bez předchozího písemného souhlasu autora striktně zakázáno zejména:</p>
+                <ul>
+                    <li><strong>Reprodukovat (kopírovat)</strong> obsah materiálů či jejich částí jakýmikoli prostředky.</li>
+                    <li><strong>Šířit, sdělovat veřejnosti, pronajímat nebo půjčovat</strong> materiály či jejich části třetím osobám, a to jak v hmotné, tak nehmotné (digitální) podobě.</li>
+                    <li><strong>Zveřejňovat</strong> materiály na internetu, sociálních sítích, intranetových systémech či jiných platformách.</li>
+                    <li><strong>Upravovat, pozměňovat</strong> nebo jinak zasahovat do obsahu či formy materiálů.</li>
+                    <li>Využívat materiály či jejich části ke <strong>komerčním účelům</strong>, včetně jejich začlenění do placených kurzů, produktů či služeb.</li>
+                </ul>
+                <p>Jakékoli užití nad rámec udělené licence je považováno za neoprávněný zásah do autorských práv a může vést k občanskoprávním i trestněprávním následkům.</p>
+            </div>
+            <div class="modal-actions">
+                <button id="accept-and-download-btn">Souhlasím a stáhnout</button>
+            </div>
+        </div>
+    </div>
+    
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script src="/_vercel/insights/script.js"></script>
+
+    <script>
+        // --- FUNKCIONALITA PRO MODÁLNÍ OKNO ---
+
+        // Získání všech potřebných elementů
+        const legalModal = document.getElementById('legal-modal');
+        const closeModalBtn = document.querySelector('.modal-close');
+        const acceptAndDownloadBtn = document.getElementById('accept-and-download-btn');
+        const downloadLinks = document.querySelectorAll('a.cta-button-small[download]');
+
+        let fileToDownloadUrl = '';
+
+        // Funkce pro otevření modálního okna
+        const openModal = (event) => {
+            event.preventDefault(); // Zabráníme výchozí akci (stažení souboru)
+            fileToDownloadUrl = event.currentTarget.href; // Uložíme si URL souboru
+            legalModal.style.display = 'flex'; // Zobrazíme modální okno
+        };
+
+        // Funkce pro zavření modálního okna
+        const closeModal = () => {
+            legalModal.style.display = 'none';
+            fileToDownloadUrl = ''; // Vyčistíme URL po zavření
+        };
+
+        // Přidání posluchačů událostí na všechny stahovací odkazy
+        downloadLinks.forEach(link => {
+            link.addEventListener('click', openModal);
+        });
+
+        // Přidání posluchače na tlačítko "Souhlasím a stáhnout"
+        acceptAndDownloadBtn.addEventListener('click', () => {
+            if (fileToDownloadUrl) {
+                // Vytvoříme dočasný skrytý odkaz a simulujeme kliknutí pro stažení
+                const tempLink = document.createElement('a');
+                tempLink.href = fileToDownloadUrl;
+                tempLink.setAttribute('download', fileToDownloadUrl.split('/').pop());
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
+
+                closeModal(); // Zavřeme modální okno po stažení
+            }
+        });
+
+        // Přidání posluchačů pro zavření okna
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Umožní zavřít okno kliknutím na pozadí
+        legalModal.addEventListener('click', (event) => {
+            if (event.target === legalModal) {
+                closeModal();
+            }
+        });
+        
+        // --- KONEC FUNKCIONALITY PRO MODÁLNÍ OKNO ---
+    </script>
 </body>
 </html>
